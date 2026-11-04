@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TOEIC hằng ngày</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f7fb;--card:#fff;--ink:#14213d;--mute:#5b6784;--line:#dbe2ef;--acc:#2f5bea;--acc-t:#e6ecff;--ok:#117a4d;--ok-t:#dff5ea;--bad:#b3261e;--bad-t:#fde7e5;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1526;--card:#182038;--ink:#e8ecf8;--mute:#9aa6c4;--line:#2a3558;--acc:#7e9bff;--acc-t:#222d56;--ok:#5fd7a0;--ok-t:#14352a;--bad:#ff8f87;--bad-t:#3b1b1a}}
+:root[data-theme="dark"]{--bg:#0f1526;--card:#182038;--ink:#e8ecf8;--mute:#9aa6c4;--line:#2a3558;--acc:#7e9bff;--acc-t:#222d56;--ok:#5fd7a0;--ok-t:#14352a;--bad:#ff8f87;--bad-t:#3b1b1a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Be Vietnam Pro",system-ui,sans-serif}
+main{max-width:720px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:1.6rem;margin:4px 0 2px;font-weight:800}
+.sub{color:var(--mute);margin:0 0 16px}
+nav{display:flex;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px;margin-bottom:16px}
+nav button{flex:1;border:0;background:none;color:var(--mute);font:inherit;font-weight:500;padding:9px 4px;border-radius:9px;cursor:pointer}
+nav button.on{background:var(--acc);color:#fff;font-weight:700}
+button:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.stats{display:flex;gap:10px;margin-bottom:16px}
+.stats div{flex:1;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.stats b{display:block;font-size:1.4rem}
+.stats span{color:var(--mute);font-size:.85rem}
+.word{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--acc);border-radius:12px;padding:16px;margin-bottom:12px}
+.word.done{border-left-color:var(--ok)}
+.w{font-size:1.9rem;font-weight:800;letter-spacing:-.01em;line-height:1.2}
+.pos{color:var(--mute);font-size:.9rem;margin-left:6px;font-weight:400}
+.vi{font-weight:700;margin:4px 0}
+.ex{margin:8px 0 0;padding:8px 12px;background:var(--acc-t);border-radius:8px;font-size:.95rem}
+.ex i{display:block;color:var(--mute);font-style:normal;font-size:.88rem}
+.row{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-weight:500;padding:8px 14px;border-radius:9px;cursor:pointer}
+.btn.p{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:700}
+.btn:disabled{opacity:.5;cursor:default}
+.q{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+.qs{font-size:1.15rem;font-weight:500;margin:6px 0 14px}
+.opt{display:block;width:100%;text-align:left;margin-bottom:8px;padding:11px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font:inherit;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--acc)}
+.opt.ok{border-color:var(--ok);background:var(--ok-t)}
+.opt.bad{border-color:var(--bad);background:var(--bad-t)}
+.why{margin-top:12px;padding:12px 14px;border-radius:10px;background:var(--acc-t);font-size:.95rem}
+.why b.ok{color:var(--ok)}.why b.bad{color:var(--bad)}
+.bar{height:6px;background:var(--line);border-radius:3px;margin-bottom:10px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--acc)}
+.score{font-size:2.4rem;font-weight:800}
+.part{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:8px}
+.part b{display:block}.part span{color:var(--mute);font-size:.92rem}
+h2{font-size:1.1rem;margin:20px 0 8px}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:.9rem}th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}th{color:var(--mute);font-weight:500}details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin-bottom:10px}summary{cursor:pointer;font-weight:700}.acc{display:inline-block;height:8px;background:var(--acc);border-radius:4px;vertical-align:middle}.tag{display:inline-block;background:var(--bad-t);color:var(--bad);border-radius:6px;padding:1px 8px;margin:2px 4px 2px 0;font-size:.85rem}.tag.g{background:var(--ok-t);color:var(--ok)}
+label{display:block;font-weight:500;font-size:.92rem}.in{display:block;width:100%;padding:10px 12px;margin:4px 0 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font:inherit}
+.hide{display:none}
+textarea.in{font:12px/1.4 ui-monospace,monospace;resize:vertical}
+</style>
+</head>
+<body>
+<main>
+<h1>TOEIC hằng ngày</h1>
+<p class="sub">Học 4 từ mới mỗi ngày, làm test Part 5 từ chính những từ đã học, xem giải thích vì sao chọn đáp án.</p>
+<div id="gate" class="q"></div>
+<div id="app" class="hide">
+<nav role="tablist">
+<button class="on" data-t="learn">Từ mới hôm nay</button>
+<button data-t="test">Làm test</button>
+<button data-t="toeic">Cấu trúc TOEIC</button>
+<button data-t="admin">Tiến độ</button>
+</nav>
+
+<section id="learn"></section>
+<section id="test" class="hide"></section>
+<section id="toeic" class="hide">
+<p class="sub">Bài thi TOEIC Listening &amp; Reading gồm 200 câu, 2 giờ, tối đa 990 điểm.</p>
+<h2>Listening (100 câu, 45 phút)</h2>
+<div class="part"><b>Part 1: Mô tả tranh (6 câu)</b><span>Nghe 4 câu mô tả, chọn câu đúng với bức tranh.</span></div>
+<div class="part"><b>Part 2: Hỏi đáp (25 câu)</b><span>Nghe một câu hỏi và chọn câu trả lời phù hợp nhất.</span></div>
+<div class="part"><b>Part 3: Đoạn hội thoại (39 câu)</b><span>Nghe hội thoại ngắn, trả lời 3 câu hỏi cho mỗi đoạn.</span></div>
+<div class="part"><b>Part 4: Bài nói ngắn (30 câu)</b><span>Thông báo, quảng cáo, bài phát biểu; 3 câu hỏi cho mỗi bài.</span></div>
+<h2>Reading (100 câu, 75 phút)</h2>
+<div class="part"><b>Part 5: Hoàn thành câu (30 câu)</b><span>Chọn từ/cụm từ điền vào chỗ trống: kiểm tra từ loại, ngữ pháp, từ vựng. Trang này luyện đúng dạng này.</span></div>
+<div class="part"><b>Part 6: Hoàn thành đoạn văn (16 câu)</b><span>Điền từ hoặc câu vào đoạn email, thông báo.</span></div>
+<div class="part"><b>Part 7: Đọc hiểu (54 câu)</b><span>Đọc một hoặc nhiều đoạn văn (email, quảng cáo, bài báo) và trả lời câu hỏi.</span></div>
+<h2>Mẹo làm Part 5</h2>
+<div class="part"><span>1. Nhìn các lựa chọn: nếu cùng gốc từ nhưng khác đuôi thì đây là câu từ loại.<br>2. Xét vị trí chỗ trống: sau mạo từ/tính từ sở hữu cần danh từ; trước danh từ cần tính từ; trước động từ hoặc số cần trạng từ.<br>3. Sau will/must/can cần động từ nguyên mẫu; sau be cần V-ing hoặc V3.<br>4. Nếu các lựa chọn khác nghĩa, dịch câu và chọn từ hợp ngữ cảnh.</span></div>
+</section>
+<section id="admin" class="hide"></section>
+</div>
+</main>
+
+<script>
+const W=[
+["reimburse","v","hoàn trả (chi phí)","Văn phòng","Employees will be ___ for travel expenses.",["reimbursed","reimbursing","reimbursement","reimburse"],0,"Nhân viên sẽ được hoàn trả chi phí đi lại.","Sau will be cần V3 (bị động: được hoàn trả). reimbursing là V-ing không tạo bị động; reimbursement là danh từ; reimburse là nguyên mẫu, không đứng sau will be."],
+["approximately","adv","khoảng, xấp xỉ","Số liệu","The meeting will last ___ two hours.",["approximate","approximately","approximation","approximated"],1,"Cuộc họp sẽ kéo dài khoảng hai giờ.","Trước số lượng (two hours) cần trạng từ để bổ nghĩa: approximately. approximate là tính từ, approximation là danh từ, approximated là V3."],
+["postpone","v","hoãn lại","Văn phòng","The product launch was ___ until next month.",["postpone","postpones","postponing","postponed"],3,"Buổi ra mắt sản phẩm bị hoãn đến tháng sau.","was + V3 tạo câu bị động (bị hoãn). Các đáp án còn lại là nguyên mẫu, ngôi thứ ba và V-ing: không đi với was để tạo bị động."],
+["candidate","n","ứng viên","Tuyển dụng","Each ___ must submit a résumé before the interview.",["candidate","candidates","candidacy","candidated"],0,"Mỗi ứng viên phải nộp sơ yếu lý lịch trước buổi phỏng vấn.","Each + danh từ đếm được số ít nên chọn candidate. candidates là số nhiều; candidacy (sự ứng cử) sai nghĩa; candidated không phải dạng đúng."],
+["revenue","n","doanh thu","Tài chính","The company's annual ___ exceeded expectations.",["deadline","revenue","vacancy","warranty"],1,"Doanh thu hằng năm của công ty vượt kỳ vọng.","Câu hỏi về nghĩa: chỉ revenue (doanh thu) hợp với exceeded expectations. deadline = hạn chót, vacancy = vị trí trống, warranty = bảo hành."],
+["mandatory","adj","bắt buộc","Quy định","Attendance at the safety training is ___.",["mandate","mandatory","mandating","mandatorily"],1,"Việc tham dự khóa đào tạo an toàn là bắt buộc.","Sau động từ be cần tính từ làm bổ ngữ: mandatory. mandate là danh từ/động từ; mandating là V-ing; mandatorily là trạng từ nên không đứng sau is."],
+["vacancy","n","chỗ trống, vị trí tuyển","Khách sạn","The hotel has no ___ this weekend.",["vacant","vacancy","vacantly","vacate"],1,"Khách sạn không còn phòng trống vào cuối tuần này.","Sau no cần danh từ: vacancy. vacant là tính từ, vacantly là trạng từ, vacate là động từ."],
+["comply","v","tuân thủ","Quy định","All staff must ___ with the new safety regulations.",["comply","compliance","compliant","complying"],0,"Mọi nhân viên phải tuân thủ quy định an toàn mới.","Sau must cần động từ nguyên mẫu: comply (with). compliance là danh từ, compliant là tính từ, complying là V-ing."],
+["reliable","adj","đáng tin cậy","Mua bán","We need a ___ supplier for our office equipment.",["rely","reliance","reliably","reliable"],3,"Chúng tôi cần một nhà cung cấp đáng tin cậy cho thiết bị văn phòng.","Giữa mạo từ a và danh từ supplier cần tính từ: reliable. rely là động từ, reliance là danh từ, reliably là trạng từ."],
+["submit","v","nộp, gửi","Văn phòng","Please ___ your application by Friday.",["submit","submission","submitted","submitting"],0,"Vui lòng nộp đơn trước thứ Sáu.","Câu mệnh lệnh với Please cần động từ nguyên mẫu: submit. submission là danh từ; submitted, submitting không đứng sau Please trong câu mệnh lệnh."],
+["expire","v","hết hạn","Hợp đồng","Your warranty will ___ in June.",["expired","expire","expiration","expiring"],1,"Bảo hành của bạn sẽ hết hạn vào tháng Sáu.","will + động từ nguyên mẫu: expire. expired (V2/V3), expiring (V-ing) và expiration (danh từ) đều sai cấu trúc."],
+["temporary","adj","tạm thời","Tuyển dụng","She accepted a ___ position at the firm.",["temporary","temporarily","temper","temporal"],0,"Cô ấy nhận một vị trí tạm thời tại công ty.","Trước danh từ position cần tính từ: temporary. temporarily là trạng từ; temper là danh từ (tính khí); temporal (thuộc thời gian) sai ngữ cảnh."],
+["negotiate","v","đàm phán","Kinh doanh","The two companies are ___ a new contract.",["negotiation","negotiable","negotiating","negotiator"],2,"Hai công ty đang đàm phán một hợp đồng mới.","are + V-ing tạo thì tiếp diễn, và phía sau có tân ngữ a new contract nên cần động từ: negotiating. Các đáp án khác là danh từ hoặc tính từ."],
+["inventory","n","hàng tồn kho","Kinh doanh","The clerk counts the ___ every Monday.",["itinerary","invoice","inventory","internship"],2,"Nhân viên kiểm đếm hàng tồn kho mỗi thứ Hai.","Việc đếm hàng trong kho là inventory. itinerary = lịch trình, invoice = hóa đơn, internship = kỳ thực tập."],
+["deadline","n","hạn chót","Văn phòng","We must meet the ___ to avoid penalties.",["deadline","vacancy","brochure","inventory"],0,"Chúng ta phải kịp hạn chót để tránh bị phạt.","meet the deadline là cụm cố định (kịp hạn chót) và hợp với to avoid penalties. Các từ còn lại không đi với meet theo nghĩa này."],
+["attend","v","tham dự","Sự kiện","Over 200 people ___ the conference last year.",["attendance","attendee","attending","attended"],3,"Hơn 200 người đã tham dự hội nghị năm ngoái.","last year cho biết quá khứ và câu thiếu động từ chính: attended. attendance và attendee là danh từ; attending thiếu trợ động từ."],
+["efficient","adj","hiệu quả","Quản lý","The new system is more ___ than the old one.",["efficiency","efficient","efficiently","efficiencies"],1,"Hệ thống mới hiệu quả hơn hệ thống cũ.","Sau be + more cần tính từ so sánh: efficient. Các đáp án còn lại là danh từ hoặc trạng từ."],
+["supervisor","n","người giám sát","Văn phòng","Please report the problem to your ___.",["supervise","supervision","supervised","supervisor"],3,"Vui lòng báo vấn đề cho cấp trên trực tiếp của bạn.","Sau your cần danh từ chỉ người nhận báo cáo: supervisor. supervision cũng là danh từ nhưng chỉ sự giám sát, không phải người."],
+["renovate","v","cải tạo, sửa chữa","Bất động sản","The lobby will be ___ next spring.",["renovate","renovating","renovated","renovation"],2,"Sảnh sẽ được cải tạo vào mùa xuân tới.","will be + V3 tạo bị động: renovated. renovate, renovating đều sai dạng; renovation là danh từ."],
+["considerable","adj","đáng kể","Số liệu","The project required a ___ amount of time.",["considerate","considerable","considerably","consider"],1,"Dự án đòi hỏi một lượng thời gian đáng kể.","Cần tính từ trước amount, nghĩa là nhiều: considerable. Bẫy: considerate nghĩa là ân cần, chu đáo nên sai nghĩa."],
+["invoice","n","hóa đơn","Tài chính","Please pay the ___ within 30 days.",["invoice","itinerary","résumé","brochure"],0,"Vui lòng thanh toán hóa đơn trong vòng 30 ngày.","Thanh toán (pay) trong 30 ngày liên quan đến invoice. itinerary = lịch trình, résumé = sơ yếu lý lịch, brochure = tờ rơi."],
+["launch","v","ra mắt","Kinh doanh","The company will ___ a new product line in May.",["launch","launched","launching","launches"],0,"Công ty sẽ ra mắt một dòng sản phẩm mới vào tháng Năm.","will + động từ nguyên mẫu: launch. launches chia ngôi ba, launched là quá khứ, launching là V-ing: đều sai sau will."],
+["prior to","prep","trước khi","Quy định","Passengers must show ID ___ boarding.",["prior","previous","previously","prior to"],3,"Hành khách phải xuất trình giấy tờ tùy thân trước khi lên tàu bay.","prior to là giới từ (trước khi) đứng trước boarding. prior cần đi với to; previous là tính từ; previously là trạng từ."],
+["colleague","n","đồng nghiệp","Văn phòng","I discussed the plan with a ___ in marketing.",["college","collage","colleague","collegial"],2,"Tôi đã bàn kế hoạch với một đồng nghiệp ở phòng marketing.","colleague = đồng nghiệp, hợp với in marketing. Bẫy chính tả: college (trường đại học), collage (tranh cắt dán), collegial (thân thiện giữa đồng nghiệp, là tính từ)."]
+];
+const $=s=>document.querySelector(s);
+let S={name:"",learned:[],off:0,hist:[],days:{},wrongW:{}},A={};
+try{const r=localStorage.getItem("toeic-v2");if(r)S=Object.assign(S,JSON.parse(r))}catch(e){}
+try{A=JSON.parse(localStorage.getItem("toeic-admin")||"{}")||{}}catch(e){A={}}
+const save=()=>{try{localStorage.setItem("toeic-v2",JSON.stringify(S))}catch(e){}};
+const saveA=()=>{try{localStorage.setItem("toeic-admin",JSON.stringify(A))}catch(e){}};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const day=Math.floor((Date.now()-new Date().getTimezoneOffset()*6e4)/864e5);
+const fd=n=>new Date(n*864e5).toLocaleDateString("vi-VN",{timeZone:"UTC"});
+function todayIdx(){const n=W.length,s=((day+S.off)*4)%n;return[0,1,2,3].map(i=>(s+i)%n)}
+function speak(t){try{const u=new SpeechSynthesisUtterance(t);u.lang="en-US";u.rate=.9;speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){}}
+function filled(w){return w[4].replace("___",w[5][w[6]])}
+function dd(){return S.days[day]||(S.days[day]={q:0,w:0,l:0})}
+function bump(ok,name){const d=dd();d.q++;if(!ok){d.w++;S.wrongW[name]=(S.wrongW[name]||0)+1}d.l=S.learned.length;save()}
+
+function showGate(){
+$("#gate").classList.remove("hide");$("#app").classList.add("hide");
+$("#gate").innerHTML=`<p class="qs">Chào mừng bạn!</p><p class="sub">Nhập tên để bắt đầu học. Tiến độ được lưu ngay trên thiết bị này, lần sau mở lại là học tiếp.</p><label>Tên của bạn<input class="in" id="nm" maxlength="40" value="${esc(S.name)}" autocomplete="name"></label><div class="row"><button class="btn p" id="go">Bắt đầu học</button></div><p class="sub" id="gm"></p>`}
+function enter(){$("#gate").classList.add("hide");$("#app").classList.remove("hide");tab("learn")}
+
+function card(i){const w=W[i],d=S.learned.includes(i);return `<article class="word${d?" done":""}"><div class="w">${esc(w[0])}<span class="pos">(${esc(w[1])}) · ${esc(w[3])}</span></div><div class="vi">${esc(w[2])}</div><div class="ex">${esc(filled(w))}<i>${esc(w[7])}</i></div><div class="row"><button class="btn" data-s="${i}">Nghe phát âm</button><button class="btn${d?"":" p"}" data-l="${i}">${d?"Đã học (bấm để bỏ)":"Đánh dấu đã học"}</button></div></article>`}
+
+function renderLearn(){
+const acc=S.hist.length?Math.round(S.hist.reduce((a,b)=>a+b,0)/S.hist.length):0;
+let h=`<p class="sub">Xin chào, <b>${esc(S.name)}</b> <button class="btn" id="rename" style="padding:2px 10px;margin-left:6px">Đổi tên</button></p>`;
+h+=`<div class="stats"><div><b>${S.learned.length}/${W.length}</b><span>từ đã học</span></div><div><b>${S.hist.length}</b><span>bài test đã làm</span></div><div><b>${S.hist.length?acc+"%":"-"}</b><span>điểm trung bình</span></div></div>`;
+h+=todayIdx().map(card).join("");
+h+=`<div class="row"><button class="btn" id="more">Học bộ 4 từ tiếp theo</button><button class="btn p" id="goTest">Làm test với từ đã học</button></div>`;
+$("#learn").innerHTML=h}
+
+let Q=null;
+function renderTest(){
+const n=S.learned.length;
+if(!Q){
+if(n<3){$("#test").innerHTML=`<div class="q"><p class="qs">Bạn cần đánh dấu đã học ít nhất 3 từ để tạo bài test.</p><p>Hiện có ${n} từ. Vào tab Từ mới hôm nay để học.</p></div>`;return}
+const cnt=Math.min(10,n);
+$("#test").innerHTML=`<div class="q"><p class="qs">Bài test Part 5 gồm ${cnt} câu, lấy từ ${n} từ bạn đã học.</p><div class="row"><button class="btn p" id="start">Bắt đầu</button></div></div>`;return}
+if(Q.i>=Q.list.length){
+const pct=Math.round(Q.right/Q.list.length*100);
+$("#test").innerHTML=`<div class="q"><div class="score">${Q.right}/${Q.list.length}</div><p class="qs">${pct>=80?"Rất tốt! Bạn nắm vững các từ này.":pct>=50?"Khá ổn. Hãy xem lại các từ sai bên dưới.":"Cần ôn thêm. Học lại các từ sai rồi làm lại."}</p>${Q.wrong.length?"<p><b>Từ cần ôn:</b> "+Q.wrong.map(i=>W[i][0]).join(", ")+"</p>":""}<div class="row"><button class="btn p" id="again">Làm bài mới</button></div></div>`;return}
+const i=Q.list[Q.i],w=W[i];
+$("#test").innerHTML=`<div class="q"><div class="bar"><i style="width:${Q.i/Q.list.length*100}%"></i></div><span class="sub">Câu ${Q.i+1}/${Q.list.length}</span><p class="qs">${esc(w[4])}</p><div id="opts">${w[5].map((o,k)=>`<button class="opt" data-o="${k}">${String.fromCharCode(65+k)}. ${esc(o)}</button>`).join("")}</div><div id="res"></div></div>`}
+
+function startTest(){
+const l=[...S.learned].sort(()=>Math.random()-.5).slice(0,10);
+Q={list:l,i:0,right:0,wrong:[]};renderTest()}
+
+function answer(k){
+const i=Q.list[Q.i],w=W[i],ok=k===w[6];
+document.querySelectorAll(".opt").forEach((b,j)=>{b.disabled=true;if(j===w[6])b.classList.add("ok");else if(j===k)b.classList.add("bad")});
+if(ok)Q.right++;else Q.wrong.push(i);
+bump(ok,w[0]);
+$("#res").innerHTML=`<div class="why"><b class="${ok?"ok":"bad"}">${ok?"Chính xác!":"Chưa đúng."}</b> Đáp án đúng: <b>${esc(w[5][w[6]])}</b>.<br>${esc(w[8])}<br><i>Dịch: ${esc(w[7])}</i></div><div class="row"><button class="btn p" id="next">${Q.i+1<Q.list.length?"Câu tiếp theo":"Xem kết quả"}</button></div>`;
+if(Q.i+1>=Q.list.length){S.hist.push(Math.round(Q.right/Q.list.length*100));save()}}
+
+function myCode(){const o={n:S.name,l:S.learned.map(i=>W[i][0]),d:S.days,w:S.wrongW,t:S.hist.length,u:Date.now()};return btoa(unescape(encodeURIComponent(JSON.stringify(o))))}
+
+function renderAdmin(){
+const rows=Object.values(A).sort((a,b)=>b.u-a.u);
+rows.forEach(r=>{r.ds=Object.entries(r.d||{}).sort((a,b)=>a[0]-b[0]);r.q=r.ds.reduce((a,e)=>a+(e[1].q||0),0);r.wq=r.ds.reduce((a,e)=>a+(e[1].w||0),0)});
+let h=`<h2>Gửi tiến độ của bạn</h2><p class="sub">Bấm sao chép rồi gửi mã này (qua Zalo, tin nhắn...) cho người quản lý.</p><textarea class="in" id="mycode" rows="3" readonly>${myCode()}</textarea><div class="row"><button class="btn p" id="copy">Sao chép mã tiến độ</button></div>`;
+h+=`<h2>Dành cho người quản lý</h2><p class="sub">Dán mã của học viên (mỗi mã một dòng) rồi bấm Xem. Mã đã dán được nhớ trên thiết bị này.</p><textarea class="in" id="codes" rows="3" placeholder="Dán mã vào đây"></textarea><div class="row"><button class="btn" id="view">Xem tiến độ</button></div><p class="sub" id="am"></p>`;
+if(rows.length){
+h+=`<div class="stats"><div><b>${rows.length}</b><span>học viên</span></div><div><b>${rows.reduce((a,r)=>a+r.q,0)}</b><span>câu đã làm</span></div><div><b>${rows.reduce((a,r)=>a+r.wq,0)}</b><span>câu sai</span></div></div>`;
+rows.forEach(r=>{
+const acc=r.q?Math.round((r.q-r.wq)/r.q*100):0;
+const ww=Object.entries(r.w||{}).sort((a,b)=>b[1]-a[1]);
+h+=`<details><summary>${esc(r.n)} · ${(r.l||[]).length} từ · ${r.wq} câu sai/${r.q} · ${r.q?acc+"%":"-"}</summary><p class="sub">Cập nhật: ${new Date(r.u).toLocaleString("vi-VN")} · ${r.t||0} bài test</p><h2>Tiến bộ theo ngày</h2><div class="tw"><table><tr><th>Ngày</th><th>Từ đã học (tích lũy)</th><th>Câu làm</th><th>Câu sai</th><th>Đúng</th><th></th></tr>${r.ds.map(([d,v])=>{const p=v.q?Math.round((v.q-v.w)/v.q*100):0;return `<tr><td>${fd(+d)}</td><td>${v.l||0}</td><td>${v.q||0}</td><td>${v.w||0}</td><td>${v.q?p+"%":"-"}</td><td><span class="acc" style="width:${p}px"></span></td></tr>`}).join("")}</table></div><h2>Từ hay sai</h2>${ww.length?ww.map(([n,c])=>`<span class="tag">${esc(n)} ×${c}</span>`).join(""):'<span class="sub">Chưa có câu sai.</span>'}<h2>Từ đã học</h2>${(r.l||[]).map(n=>`<span class="tag g">${esc(n)}</span>`).join("")||'<span class="sub">Chưa có.</span>'}</details>`})}
+$("#admin").innerHTML=h}
+
+function tab(t){
+document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on",b.dataset.t===t));
+["learn","test","toeic","admin"].forEach(s=>$("#"+s).classList.toggle("hide",s!==t));
+if(t==="learn")renderLearn();
+if(t==="test"){Q=null;renderTest()}
+if(t==="admin")renderAdmin()}
+
+document.addEventListener("click",e=>{
+const b=e.target.closest("button");if(!b)return;
+if(b.dataset.t)return tab(b.dataset.t);
+if(b.dataset.s)return speak(W[b.dataset.s][0]);
+if(b.dataset.l!==undefined){const i=+b.dataset.l,p=S.learned.indexOf(i);p<0?S.learned.push(i):S.learned.splice(p,1);dd().l=S.learned.length;save();return renderLearn()}
+if(b.id==="go"){const n=$("#nm").value.trim();if(!n){$("#gm").textContent="Vui lòng nhập tên.";return}S.name=n;save();return enter()}
+if(b.id==="rename")return showGate();
+if(b.id==="more"){S.off++;save();return renderLearn()}
+if(b.id==="goTest")return tab("test");
+if(b.id==="start"||b.id==="again")return startTest();
+if(b.dataset.o!==undefined)return answer(+b.dataset.o);
+if(b.id==="next"){Q.i++;return renderTest()}
+if(b.id==="copy"){const t=$("#mycode");t.select();let ok=false;try{ok=document.execCommand("copy")}catch(x){}if(!ok&&navigator.clipboard)navigator.clipboard.writeText(t.value);b.textContent="Đã sao chép";return}
+if(b.id==="view"){let bad=0;$("#codes").value.split(/\s+/).filter(Boolean).forEach(x=>{try{const o=JSON.parse(decodeURIComponent(escape(atob(x))));if(o&&o.n&&(!A[o.n]||o.u>=A[o.n].u))A[o.n]=o;else if(!o||!o.n)bad++}catch(y){bad++}});saveA();renderAdmin();if(bad)$("#am").textContent=bad+" mã không hợp lệ."}
+});
+if(S.name)enter();else showGate();
+</script>
+</body>
+</html>
